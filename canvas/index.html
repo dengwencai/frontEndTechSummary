@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="c"
+      width="300"
+      height="300"
+      style="border: 1px solid #ccc"
+    ></canvas>
+
+    <script>
+      //   const cnv = document.getElementById("c");
+      //   const cxt = cnv.getContext("2d");
+
+      //   // 如果不想相互污染，需要做2件事：
+      //   // 使用 beginPath() 方法，重新开一个路径
+      //   // 设置新线段的样式（必须项）
+
+      //   // 第一条线
+      //   cxt.moveTo(20, 100);
+      //   cxt.lineTo(200, 100);
+      //   cxt.lineWidth = 10;
+      //   cxt.strokeStyle = "pink";
+      //   cxt.stroke();
+
+      //   // 第二条线
+      //   cxt.beginPath(); // 重新开启一个路径
+      //   cxt.moveTo(20, 120.5);
+      //   cxt.lineTo(200, 120.5);
+      //   cxt.lineWidth = 4;
+      //   cxt.strokeStyle = "red";
+      //   cxt.stroke();
+
+      //   const cnv = document.getElementById("c");
+      //   const cxt = cnv.getContext("2d");
+      //   cxt.strokeStyle = "pink";
+      //   cxt.strokeRect(50, 50, 200, 100); //绘制矩形，border，strokeRect(x, y, width, height)
+      //   cxt.fillRect(51, 51, 100, 50); //绘制矩形，填充，fillRect(x, y, width, height)
+
+      //   const cnv = document.getElementById("c");
+      //   const cxt = cnv.getContext("2d");
+
+      //   cxt.strokeStyle = "red";
+      //   cxt.fillStyle = "pink";
+
+      //   cxt.rect(50, 50, 200, 100); // rect(x, y, width, height)
+      //   cxt.stroke();
+      //   cxt.fill();
+
+      // 清空
+      //   const cnv = document.getElementById("c");
+      //   const cxt = cnv.getContext("2d");
+      //   cxt.fillStyle = "pink"; // 设置填充颜色
+      //   cxt.fillRect(50, 50, 200, 200); // 填充矩形
+      //   cxt.clearRect(60, 60, 180, 90); // 清空矩形
+
+      //   const cnv = document.getElementById("c");
+      //   const cxt = cnv.getContext("2d");
+      //   cxt.moveTo(20, 120.5);
+      //   cxt.lineTo(200, 120.5);
+      //   cxt.lineTo(200, 200);
+      //   cxt.lineTo(20, 200);
+      //   cxt.lineWidth = 20
+      //   cxt.closePath();
+      //   cxt.stroke();
+
+      //   const cnv = document.getElementById("c");
+      //   const cxt = cnv.getContext("2d");
+
+      //   cxt.moveTo(150, 50);
+      //   cxt.lineTo(250, 100);
+      //   cxt.lineTo(150, 150);
+      //   cxt.lineTo(50, 100);
+      //   cxt.closePath();
+      //   cxt.stroke();
+
+      //   const cnv = document.getElementById("c");
+      //   const cxt = cnv.getContext("2d");
+      //   cxt.beginPath();
+
+      // arc(x, y, r, sAngle, eAngle，counterclockwise)
+      // x 和 y: 圆心坐标
+      // r: 半径
+      // sAngle: 开始角度
+      // eAngle: 结束角度
+      // counterclockwise: 绘制方向（true: 逆时针; false: 顺时针），默认 false
+
+      //   cxt.arc(150, 150, 80, 0, (360 * Math.PI) / 180);
+      //   cxt.closePath();
+      //   cxt.stroke();
+
+      //   const cnv = document.getElementById("c");
+      //   const cxt = cnv.getContext("2d");
+
+      //   // 外层矩形
+      //   cxt.moveTo(50, 50);
+      //   cxt.lineTo(250, 50);
+      //   cxt.lineTo(250, 250);
+      //   cxt.lineTo(50, 250);
+      //   cxt.closePath();
+
+      //   // 内层矩形
+      //   cxt.moveTo(200, 100);
+      //   cxt.lineTo(100, 100);
+      //   cxt.lineTo(100, 200);
+      //   cxt.lineTo(200, 200);
+      //   cxt.closePath();
+      //   cxt.fill();
+
+      const cnv = document.getElementById("c");
+      const cxt = cnv.getContext("2d");
+      const image = new Image();
+      image.src = "./img1.png";
+      image.onload = () => {
+        cxt.drawImage(image,0,0,50,50)
+      };
+    </script>
+  </body>
+</html>

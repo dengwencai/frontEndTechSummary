@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const createWebWorker = () => {
+        if (window.Worker) {
+          const myWorker = new Worker('./worker.js');
+
+          // 主线程向子线程传递参数
+          myWorker.postMessage("主线程向子线程传递参数");
+
+          // 接受子线程的参数
+          myWorker.onmessage = (e) => {
+            console.log("接受子线程传递的参数", e.data);
+          };
+
+          // 处理完毕 关闭子线程
+          // myWorker.terminate()
+        } else {
+          console.warn("当前浏览器不支持webWorker");
+        }
+      };
+      
+      createWebWorker()
+    </script>
+  </body>
+</html>

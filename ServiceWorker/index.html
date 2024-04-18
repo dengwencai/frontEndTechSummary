@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="sendRequest()">按钮</button>
+    <script>
+      function sendRequest() {
+        console.log(2222);
+        fetch("https://baidu.com/api/user/1")
+          .then((res) => {
+            // console.log("%c Line:13 🥓 res", "color:#4fff4B", res);
+          })
+          .catch((err) => {
+            // console.log("%c Line:15 🥒 err", "color:#4fff4B", err);
+          });
+      }
+    </script>
+    <script>
+      window.navigator.serviceWorker
+        .register("./index.js")
+        .then((res) => {
+          const t = add(1, 2);
+          console.log("%c Line:25 🌰 t", "color:#ffdd4d", t);
+        })
+        .catch((err) => {
+          console.log("失败");
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span>{{name}}</span>
+        <input type="text" v-model="name">
+        age：<span>{{more.age}}</span>
+        <input type="text" v-model="more.age">
+    </div>
+    <script>
+        const vm = new Vue({
+            el:'#app',
+            data:{
+                name:'wangm',
+                more:{
+                    age:'20',
+                    title:'老子是资深前端'
+                }
+            }
+        })
+
+        console.log(vm);
+    </script>
+</body>
+</html>

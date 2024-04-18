@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .triangle {
+  width: 0;
+  height: 0;
+  border-top: 50px solid purple;
+  border-left: 50px solid red; /* 左边的边 */
+  border-right: 50px solid black; /* 右边的边 */
+  border-bottom: 50px solid #3498db; /* 底边，可以设置成你想要的颜色 */
+}
+    </style>
+  </head>
+  <div class="triangle"></div>
+  <script>
+    function print(fb) {
+        const b = 200;
+        fb();
+    }
+
+    const b = 100;
+
+    function fb() {
+        console.log(b); // 100
+    }
+    print(fb);
+  </script>
+  </body>
+</html>

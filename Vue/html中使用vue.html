@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.0.1/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{message}}
+      <button v-on:click="func('哈哈哈哈')" id="mybotton">vue的onclick</button>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data(){
+            return {
+                message: 'Hello Vue!'
+            }
+        },
+        methods: {
+          func: function (msg) {
+            this.message = msg;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      .container {
+        border: 1px red solid;
+        width: 600px;
+        height: 200px;
+        display: flex;
+        justify-content: space-between;
+        /*
+              flex:1 (flex:1 1 0% ===》flex-grow:1,flex-shrink:1,flex-basis:0%)-等分剩余空间
+              flex-grow: 0 //放大比例:
+              flex-shrink: 1//缩小比例
+              flex-basis:auto //
+              */
+        /* 
+      flex-grow： 定义项目的增长比例。默认值为 0，意味着项目不会增长，
+                  而只会占用它们的初始大小。当设置为正数（如 1），项目将占用容器中的剩余空间，并按比例进行分配。
+
+      flex-shrink： 定义项目的缩小比例。默认值为 1，意味着项目将在空间不足时按比例缩小。
+                    如果设置为 0，项目不会缩小。如果设置为正数，项目会根据缩小比例进行缩小。
+
+      flex-basis： 定义项目的初始大小。默认值为 auto，即项目将根据内容决定大小。
+                   可以设置为具体的长度值（如像素或百分比），
+                   也可以设置为 0 表示初始大小为 0。在使用 flex: 1 时，
+                   flex-basis 被设置为 0%，表示初始大小为 0。 */
+
+      /* flex: auto (1 1 auto) 和 none (0 0 auto) */
+      }
+      .sub {
+        width: 100px;
+        height: 200px;
+        border: 1px purple solid;
+        flex-basis: auto
+      }
+      .sub1 {
+      }
+      .sub2 {
+      }
+      .sub3{
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sub sub1">撒打算大的asdas撒打算大的asdas</div>
+      <div class="sub sub2"></div>
+      <div class="sub sub3"></div>
+    </div>
+    <script></script>
+  </body>
+</html>
