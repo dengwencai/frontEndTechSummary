@@ -8,23 +8,40 @@
   <body>
     <script>
       class DB {
-        static getInstance(initVal) {
+        static getInstance(initVal){
           if (!DB.instance) {
             DB.instance = new DB(initVal);
           }
           return DB.instance;
         }
+        
         constructor(val) {
           this.val = val;
         }
 
-        add(newVal) {
-          this.val += newVal;
+        sum(num){
+          this.val += num;
+          return this
+        }
+
+        minus(num){
+          this.val -= num;
+          return this
+        }
+
+        multify(num){
+          this.val *= num;
+          return this
+        }
+
+        divide(num){
+          this.val /= num;
+          return this
         }
       }
 
       let db = DB.getInstance(12);
-      db.add(1);
+      db.sum(1).minus(2);
       console.log("%c Line:27 🍖 db", "color:#3f7cff", db);
     </script>
   </body>
