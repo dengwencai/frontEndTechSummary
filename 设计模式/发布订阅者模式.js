@@ -26,18 +26,13 @@ class EventEmitter {
       callback(...args);
       this.off(eventName, one);
     };
-    one.initialCallback = callback;
     this.on(eventName, one);
   }
 
   // 根据事件类型，删掉回调引用
   off(eventName, callback) {
     const callbacks = this._events[eventName] || [];
-    const newCallbacks = callbacks.filter(
-      (fn) =>
-        fn != callback &&
-        fn.initialCallback != callback /* 用于once的取消订阅 */
-    );
+    const newCallbacks = callbacks.filter(fn => fn != callback);
     this._events[eventName] = newCallbacks;
   }
 }
@@ -50,6 +45,6 @@ let cb = function () {
 
 events.on("e1", cb);
 
-events.emit('e1','asdasda')
+events.emit("e1", "asdasda");
 
 // 参考文档：https://juejin.cn/post/6985156199192723487?searchId=2023111003145934B1CBC3F729B1CA16F2
