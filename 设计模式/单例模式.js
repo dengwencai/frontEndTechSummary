@@ -1,17 +1,33 @@
-
 class DB {
-  static getInstance(initVal=0) {
+  static getInstance(initVal) {
     if (!DB.instance) {
       DB.instance = new DB(initVal);
     }
     return DB.instance;
   }
+
   constructor(val) {
     this.val = val;
   }
 
-  add(newVal) {
-    this.val += newVal;
+  sum(num) {
+    this.val += num;
+    return this;
+  }
+
+  minus(num) {
+    this.val -= num;
+    return this;
+  }
+
+  multify(num) {
+    this.val *= num;
+    return this;
+  }
+
+  divide(num) {
+    this.val /= num;
+    return this;
   }
 }
 
