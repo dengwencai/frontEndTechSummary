@@ -1,8 +1,8 @@
 
 class DB {
-  static getInstance() {
+  static getInstance(initVal=0) {
     if (!DB.instance) {
-      DB.instance = new DB(0);
+      DB.instance = new DB(initVal);
     }
     return DB.instance;
   }
@@ -11,7 +11,7 @@ class DB {
   }
 
   add(newVal) {
-    this.val = newVal;
+    this.val += newVal;
   }
 }
 

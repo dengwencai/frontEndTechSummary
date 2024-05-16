@@ -1,13 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <script>
+<html lang="cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class DB {
+        static getInstance(initVal) {
+          if (!DB.instance) {
+            DB.instance = new DB(initVal);
+          }
+          return DB.instance;
+        }
+        constructor(val) {
+          this.val = val;
+        }
 
-  </script>
-</body>
+        add(newVal) {
+          this.val += newVal;
+        }
+      }
+
+      let db = DB.getInstance(12);
+      db.add(1);
+      console.log("%c Line:27 🍖 db", "color:#3f7cff", db);
+    </script>
+  </body>
 </html>
