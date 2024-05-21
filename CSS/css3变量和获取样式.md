@@ -66,4 +66,7 @@
         }
 
    ```
+   
+注意：修改只是在当前元素和后代元素中生效
+
 参考文档：https://blog.csdn.net/weixin_52629158/article/details/129955720
