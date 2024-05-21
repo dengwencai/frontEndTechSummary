@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,42 +7,10 @@
   </head>
   <body>
     <script>
-      class DB {
-        static getInstance(initVal){
-          if (!DB.instance) {
-            DB.instance = new DB(initVal);
-          }
-          return DB.instance;
-        }
-        
-        constructor(val) {
-          this.val = val;
-        }
-
-        sum(num){
-          this.val += num;
-          return this
-        }
-
-        minus(num){
-          this.val -= num;
-          return this
-        }
-
-        multify(num){
-          this.val *= num;
-          return this
-        }
-
-        divide(num){
-          this.val /= num;
-          return this
-        }
-      }
-
-      let db = DB.getInstance(12);
-      db.sum(1).minus(2);
-      console.log("%c Line:27 🍖 db", "color:#3f7cff", db);
+      const url = window.location.href;
+      const urlObj = new URL(url).searchParams;
+      let searchParams = Object.fromEntries(urlObj);
+      console.log("%c Line:13 🍒 searchParams", "color:#465975", searchParams);
     </script>
   </body>
 </html>
