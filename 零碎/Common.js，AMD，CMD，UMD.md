@@ -16,7 +16,7 @@
 
 CommonJS：开始于服务器端的模块化，同步定义的模块化，每个模块都是一个单独的作用域，模块输出，modules.exports，模块加载 require()引入模块。
 
-AMD (Asynchronous Module Definition) 规范通过define方法去定义模块，通过require方法去加载模块。
+AMD (Asynchronous Module Definition)封装的require.js，规范通过define方法去定义模块，通过require方法去加载模块。
 
 CMD规范在2011年由seaJS提出，CMD规范和AMD规范类似，主要区别是CMD规范是就近加载依赖，延迟执行，只有到require时依赖才执行。
 
