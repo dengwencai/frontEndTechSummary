@@ -1,3 +1,11 @@
+<!--
+ * @Author: dengwencai 
+ * @Date: 2023-11-09 08:01:45
+ * @LastEditors: dengwencai 
+ * @LastEditTime: 2024-06-09 14:25:31
+ * @FilePath: /get funtion/零碎/图片懒加载.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +48,129 @@
             imgObserver.observe(img)
         })
 
+
+        
+
         // 参考文档：https://www.bilibili.com/video/BV1hh4y1y7yu/?spm_id_from=333.337.search-card.all.click&vd_source=0113bf94553f5b58987085f68d51d67d
     </script>
 </body>
 </html>
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        border: 1px red solid;
+      }
+      .img-item{
+        display: block;
+        height: 300px;
+        margin-top: 50px;
+    }
+      button {
+        position: fixed;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="handleClick()">click</button>
+    <div class="container">
+      <img
+        class="img-item"
+        src=""
+        data-original="https://img.zcool.cn/community/011e0e5c231dcaa80121df9063b03f.jpg@1280w_1l_2o_100sh.jpg"
+        alt=""
+      />
+      <img
+        class="img-item"
+        src=""
+        data-original="https://img.zcool.cn/community/01427a5c63c7dba801213f26fa8f1f.jpg@1280w_1l_2o_100sh.jpg"
+        alt=""
+      />
+      <img
+        class="img-item"
+        src=""
+        data-original="https://img.zcool.cn/community/0132fb60a7171011013f472074ee82.jpg@1280w_1l_2o_100sh.jpg"
+        alt=""
+      />
+      <img
+        class="img-item"
+        src=""
+        data-original="https://pic2.zhimg.com/v2-ac79ec66a08cdbbfd36c3f9e4f307077_1440w.jpg"
+        alt=""
+      />
+      <img
+        class="img-item"
+        src=""
+        data-original="https://img.zcool.cn/community/01702360a7171511013e3b7d2249ef.jpg@1280w_1l_2o_100sh.jpg"
+        alt=""
+      />
+      <img
+        class="img-item"
+        src=""
+        data-original="https://img.zcool.cn/community/01c9e05da91bcea8012163bae9a7ea.jpg@2o.jpg"
+        alt=""
+      />
+      <img
+        class="img-item"
+        src=""
+        data-original="https://img.zcool.cn/community/010c155dcec2b0a8012053c0802a12.jpg@3000w_1l_0o_100sh.jpg"
+        alt=""
+      />
+      <img
+        class="img-item"
+        src=""
+        data-original="https://pic2.zhimg.com/v2-b2ab50d677e6f8a9101dae446dd99acd_r.jpg"
+        alt=""
+      />
+      <img
+        class="img-item"
+        src=""
+        data-original="https://img.3dmgame.com/uploads/images/thumbpicfirst/20180824/1535099402_352803.jpg"
+        alt=""
+      />
+      <img
+        class="img-item"
+        src=""
+        data-original="https://img.zcool.cn/community/0193a55b9df41ba8012099c8aedcd0.jpg@3000w_1l_0o_100sh.jpg"
+        alt=""
+      />
+    </div>
+
+    <script>
+  let viewHeight = window.innerHeight;
+    function lazyLoad(){
+        // 拿到所有的img元素
+        let imgs = document.querySelectorAll('img[data-original]');
+        imgs.forEach(el=>{
+            // getBoundingClientRect()专门获取容器的几何信息
+            let rect = el.getBoundingClientRect()
+            if(rect.top<viewHeight){
+                // img元素自带一个构造函数，可以创建一个图片对象
+                let image = new Image()
+                // js专有写法dataset.original; = data-original
+                image.src = el.dataset.original;
+                image.onload = function(){
+                    el.src = image.src
+                }
+                // 图片加载完毕就移除属性
+                el.removeAttribute('data-original')
+            }
+        })
+    }
+    lazyLoad()
+    // 添加滚动事件监听器
+    document.addEventListener('scroll',lazyLoad)
+    </script>
+  </body>
+</html>
+
+
+```
