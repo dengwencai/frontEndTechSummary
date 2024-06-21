@@ -32,28 +32,3 @@ axios优点：
 5. 可以自动转换 JSON 数据
 6. 客户端支持防止 CSRF/XSRF
 7. xhr 自带请求取消、错误等方法，所以服务器返回 4xx 或 5xx 时，axios 会抛出错误，并取消请求
-
-
-csrf/xsrf 防御机制：
-
-服务器生成一个唯一的CSRF令牌，并将其存储在会话中，同时将其发送给客户端。客户端需在后续的请求中携带这个令牌。服务器接收请求时会检查令牌的有效性。
-
-
-```js
-
-instance.interceptors.request.use(config => {
-  // 从cookie或者本地存储中获取CSRF令牌
-  const csrfToken = getCSRFToken();
-  if (csrfToken) {
-    // 如果存在CSRF令牌，将其添加到请求头中
-    config.headers['X-CSRF-Token'] = csrfToken;
-  }
-  return config;
-}, error => {
-  return Promise.reject(error);
-});
-
-```
-
-后续请求会自动携带CSRF令牌，服务器会检查令牌的有效性。
-
