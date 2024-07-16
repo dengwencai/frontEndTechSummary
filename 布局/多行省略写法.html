@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+   .container {
+      width: 700px;
+      height: 200px;
+      background-color: aqua;
+      padding: 20px;
+    }
+
+   .text-container {
+      height: 100px;
+      overflow: hidden;
+      word-wrap: break-word;
+      /* display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      text-overflow: ellipsis; */
+    }
+
+    .text-container:before{
+      content: "";
+      display: block;
+      height: 80px;
+      background-color: red;
+    }
+   .content {
+      line-height: 25px;
+      margin-top: -80px;
+    }
+
+   .more {
+      float: right;
+    }
+  
+  
+  </style>
+</head>
+<body>
+    <!-- 思路 -->
+     <!-- 1.利用float属性将省略号固定在右侧，其他元素会自动避开
+      2.增加一个元素，这里使用伪元素，将省略号和文案往下挤到合适位置
+      3. 把内容部分设置margin-top:-80px，将内容部分往上挤到合适位置，达到省略号效果 -->
+  <div class="container">
+    <div class="text-container">
+      <div class="more">...</div>
+      <div class="content">
+        当初的承诺，现在的远方；曾经的梦想，如今的现实。人生路上，风景万千，每一步都是成长，每一次起落都是历练。不管风景如何变幻，心中的信念永远不变。前行的路上，让坚定的步伐，谱写人生的壮丽乐章。
+        当初的承诺，现在的远方；曾经的梦想，如今的现实。人生路上，风景万千，每一步都是成长，每一次起落都是历练。不管风景如何变幻，心中的信念永远不变。前行的路上，让坚定的步伐，谱写人生的壮丽乐章。
+    </div>
+  </div>
+</body>
+</html>

@@ -4,9 +4,31 @@
 // 输入：root = [4,2,7,1,3,6,9]
 // 输出：[4,7,2,9,6,3,1]
 
+// let tree = {
+//     val: 4,
+//     left: {
+//       val: 2,
+//       left: {
+//         val: 1,
+//       },
+//       right: {
+//         val: 3,
+//       },
+//     },
+//     right: {
+//       val: 7,
+//       left: {
+//         val: 6,
+//       },
+//       right: {
+//         val: 9,
+//       },
+//     },
+//   };
 // 翻转二叉树
 function dfs(root){
     function transfer(node){
+        if (!node.left || !node.right) return;
         let temp = node.left;
         node.left = node.right
         node.right = temp
