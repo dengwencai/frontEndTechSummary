@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .cont{ background: #f3f4f5;}
+    .cont-li{
+      width:100%;
+      height:80px;
+      margin: 10px;
+      background-color: #666;
+    }
+    /* 选中前一个元素 */
+    .cont-li:has(+ .cont-li.active){
+      background-color: green;
+    } 
+    /* 选中后一个元素 */
+    .cont-li.active + .cont-li{
+      background-color: red;
+    } 
+  </style>
+</head>
+<body>
+  <div class="cont">
+    <div class="cont-li">0</div>
+    <div class="cont-li">1</div>
+    <div class="cont-li active">2</div>
+    <div class="cont-li">3</div>
+    <div class="cont-li">4</div>
+  </div>
+</body>
+</html>
